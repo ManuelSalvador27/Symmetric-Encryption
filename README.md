@@ -1,5 +1,10 @@
 # Symmetric-Encryption
 
+Manuel Salvador Morales Salgado|A01422267
+José Antonio Lome Paulino|A01422195
+José Fernado Ramirez Roldan|A01422285
+Juan Pablo Hernandez Gonzalez|A01423444
+
 Programa hecho en Javascript para el cifrado simétrico de datos
 
 Tecnicas de confusión:
