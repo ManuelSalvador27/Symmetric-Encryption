@@ -1,6 +1,6 @@
 # Symmetric-Encryption
 
-Manuel Salvador Morales Salgado|A01422267 \n
+Manuel Salvador Morales Salgado|A01422267
 José Antonio Lome Paulino|A01422195
 José Fernado Ramirez Roldan|A01422285
 Juan Pablo Hernandez Gonzalez|A01423444
