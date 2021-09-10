@@ -110,7 +110,7 @@
 							class="
 								mbr-section-title mbr-fonts-style
 								align-center
-								mb-4
+								mb-12
 								display-2
 							"
 						>
@@ -148,6 +148,7 @@
 						<strong>Ingresa la cadena a cifrar</strong>
 					</h3>
 				</div>
+
 				<div class="row justify-content-center mt-4">
 					<div class="col-lg-8 mx-auto mbr-form" data-form-type="formoid">
 						<form
@@ -202,10 +203,76 @@
 						</form>
 					</div>
 				</div>
+				<div class="mbr-section-head">
+					<h3
+						class="
+							mbr-section-title mbr-fonts-style
+							align-center
+							mb-0
+							display-2
+						"
+					>
+						<strong>Ingresa la clave</strong>
+					</h3>
+				</div>
+				<div class="row justify-content-center mt-4">
+					<div class="col-lg-8 mx-auto mbr-form" data-form-type="formoid">
+						<form
+							method="POST"
+							class="mbr-form form-with-styler"
+							data-form-title="Form Name"
+						>
+							<input
+								type="hidden"
+								name="email"
+								data-form-email="true"
+								value="izgJlqtTPji7YDXe3twuWckYQQUwInLrk4qq3EhzNnnEu6KwmGMzw3b/8OfgrjVpfsIxvAG2HCGBxIk6mtKlaQMlbZOEB3DIP7XDX9puWSE8QLpYExgzfJ5fD6fvzNVz"
+							/>
+							<div class="row">
+								<div
+									hidden="hidden"
+									data-form-alert=""
+									class="alert alert-success col-12"
+								>
+									Tu mensaje cifrado es: {{$hola}}
+								</div>
+								<div
+									hidden="hidden"
+									data-form-alert-danger=""
+									class="alert alert-danger col-12"
+								>
+									Oops...! some problem!
+								</div>
+							</div>
+							<div class="dragArea row">
+								<div class="col-12 form-group mb-3" data-for="textarea">
+									<textarea
+										name="textarea"
+										placeholder="Message"
+										data-form-field="textarea"
+										class="form-control"
+										id="textarea-form5-m"
+									></textarea>
+								</div>
+								<div
+									class="
+										col-lg-12 col-md-12 col-sm-12
+										align-center
+										mbr-section-btn
+									"
+								>
+									<button type="submit" class="btn btn-primary display-4">
+										Cifrado
+									</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
 			</div>
 		</section>
 
-		<section
+		<footer
 			data-bs-version="5.1"
 			class="footer7 cid-sIaJ1Cohi6"
 			once="footers"
@@ -220,7 +287,8 @@
 					</div>
 				</div>
 			</div>
-		</section>
+		</footer>
+
 		<section
 			style="
 				background-color: #fff;
