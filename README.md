@@ -1,15 +1,15 @@
 # Symmetric-Encryption
 
-Equipo Anonymous - ProTEC
+Equipo Anonymous - ProTEC <br/>
 
-Manuel Salvador Morales Salgado | A01422267
-José Antonio Lome Paulino | A01422195
-José Fernado Ramirez Roldan | A01422285
-Juan Pablo Hernandez Gonzalez | A01423444
+Manuel Salvador Morales Salgado | A01422267 <br/>
+José Antonio Lome Paulino | A01422195 <br/>
+José Fernado Ramirez Roldan | A01422285 <br/>
+Juan Pablo Hernandez Gonzalez | A01423444 <br/>
 
-Programa hecho en Javascript para el cifrado simétrico de datos
+Programa hecho en Javascript para el cifrado simétrico de datos <br/>
 
-Tecnicas de confusión:
+Tecnicas de confusión: <br/>
 
 1. Mover 4 elementos el abecedrio
 {a,b,c,d,e,f,g,h,i,j,k,l,m,n,ñ,o,p,q,r,s,t,u,v,w,x,y,z}
@@ -17,7 +17,7 @@ Tecnicas de confusión:
 
 2. Hacer un XOR a la matriz final
 
-Tecnicas de difusión:
+Tecnicas de difusión: <br/>
 
 3. Movemos 4 elementos a la derecha el arreglo original
 
