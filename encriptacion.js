@@ -1,5 +1,7 @@
 let abecedario=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','ñ','o','p','q','r','s','t','u','v','w','x','y','z','0','1','2','3','4','5','6','7','8','9','.',',',';'];
 let abecedarioCifrado=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','ñ','o','p','q','r','s','t','u','v','w','x','y','z','0','1','2','3','4','5','6','7','8','9','.',',',';'];
+let defineRows;
+let matrizTranspuesta;
 
 function crifrar(){
     let mensaje= document.getElementById('mensaje').value;
@@ -13,10 +15,10 @@ function crifrar(){
     clave =  clave.split('');
     //DIFUSION
     //1. TRANSPUESTA
-    let defineRows= mensaje.length/3;
+     defineRows= mensaje.length/3;
     defineRows=Math.ceil(defineRows);
     console.log(defineRows);
-    let matrizTranspuesta=new Array(defineRows);
+     matrizTranspuesta=new Array(defineRows);
     
     for(row=0,i=0; row<defineRows;row++){
         matrizTranspuesta[row]= new Array(3);
@@ -62,7 +64,7 @@ function crifrar(){
     }
     
     //CIFRADO XOR
-    
+
     let xorfinal=[];
     for(x=0,g=0; x<nuevoAr.length;x++,g++){
       let f=  clave[0].charCodeAt(0)^nuevoAr[x].charCodeAt(0);
@@ -104,52 +106,56 @@ function crifrar(){
         response.push(String.fromCharCode(xorfinal[g]))
     }
     let msg = response.join("")
-    debugger
-    document.getElementById("respuesta").innerHTML = "Hello World";
+    
+    document.getElementById("respuesta").innerHTML =msg ;
 }
 
 
 //Función para decifrar
 function decifrar(){
-    let mensaje= document.getElementById(mensaje);
-    let clave= document.getElementById(passwd);
+    //debugger
+    let mensaje= document.getElementById("mensaje").value;
+    let clave= document.getElementById("passwd").value;
     console.log(abecedario);
+    console.log(mensaje,"tu pta madre");
+
     let matriz=new Array(8);
 
     //Convert to string 
     mensaje = String(mensaje);
     clave = String(clave);
     clave =  clave.split('');
+    mensaje =  mensaje.split('');
     //DESCIFRADO DEL XOR
     
-    for(f=0;f<xorfinal.length;f++){
-        let check =xorfinal[f];
+    for(f=0;f<mensaje.length;f++){
+        let check =mensaje[f];
         check =check-4;
         if(check<=32){
             check=check+4;
             check=check-32;
            check=255-check;
            
-           xorfinal[f]=xorfinal[f]+check;
+           mensaje[f]=mensaje[f]+check;
     
         }else{
-            xorfinal[f]=xorfinal[f]-4;
+            mensaje[f]=mensaje[f]-4;
         }
        
      }
     
-    
+     console.log(mensaje,"tu pta madre vr 200000");
     
     
     let desXor=[];
-    for(x=0,g=0; x<xorfinal.length;x++,g++){
+    for(x=0,g=0; x<mensaje.length;x++,g++){
       let k;
-      k=xorfinal[x]-32;
+      k=mensaje[x]-32;
       if(k<=32){
-        xorfinal[x]=xorfinal[x]-33;
-        desXor.push((xorfinal[x])^clave[0].charCodeAt(0));
+        mensaje[x]=mensaje[x]-33;
+        desXor.push((mensaje[x])^clave[0].charCodeAt(0));
       }else{
-          desXor.push((xorfinal[x])^clave[0].charCodeAt(0));
+          desXor.push((mensaje[x])^clave[0].charCodeAt(0));
       }
        
        
@@ -225,6 +231,7 @@ function decifrar(){
     
     
     console.log(arregloFinal,"arregloFinal"); //TODO: PRINT MENSAJE DESENCRIPTADO
+    document.getElementById("respuesta2").innerHTML =arregloFinal ;
 }
 
 
