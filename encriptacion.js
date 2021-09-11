@@ -9,6 +9,7 @@ function crifrar(){
     console.log(abecedario);
     let matriz=new Array(8);
 
+   
     //Convert to string 
     mensaje = String(mensaje);
     clave = String(clave);
@@ -57,11 +58,7 @@ function crifrar(){
     
     console.log(nuevoAr,"nuevoArregloRecorrido")
     
-    for(x=0,g=0; x<nuevoAr.length;x++,g++){
-        
-        console.log(nuevoAr[x].charCodeAt(0));
-       
-    }
+    
     
     //CIFRADO XOR
 
