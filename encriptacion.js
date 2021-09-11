@@ -114,63 +114,67 @@ function crifrar(){
 //Función para decifrar
 function decifrar(){
     //debugger
-    let mensaje= document.getElementById("mensaje").value;
-    let clave= document.getElementById("passwd").value;
-    console.log(abecedario);
-    console.log(mensaje,"tu pta madre");
+    let mensaje= document.getElementById('mensaje').value;
+    let clave= document.getElementById('passwd').value;
+    console.log(mensaje,"MENSAJE 1.");
 
-    let matriz=new Array(8);
+    //let matriz=new Array(8);
 
     //Convert to string 
-    mensaje = String(mensaje);
+    
     clave = String(clave);
     clave =  clave.split('');
-    mensaje =  mensaje.split('');
+   
     //DESCIFRADO DEL XOR
+
+    let charCodesMensaje=[];
+    for(g=0;g<mensaje.length;g++){
+       
+        charCodesMensaje.push(mensaje[g].charCodeAt(0));
+   
+
+    }
+    for(g=0;g<charCodesMensaje.length;g++){
+      
+   console.log(charCodesMensaje[g]);
+
+    }
+
     
-    for(f=0;f<mensaje.length;f++){
-        let check =mensaje[f];
+    for(f=0;f<charCodesMensaje.length;f++){
+        let check =charCodesMensaje[f];
         check =check-4;
         if(check<=32){
             check=check+4;
             check=check-32;
            check=255-check;
            
-           mensaje[f]=mensaje[f]+check;
+           charCodesMensaje[f]=charCodesMensaje[f]+check;
     
         }else{
-            mensaje[f]=mensaje[f]-4;
+            charCodesMensaje[f]=charCodesMensaje[f]-4;
         }
        
      }
     
-     console.log(mensaje,"tu pta madre vr 200000");
+     console.log(charCodesMensaje,"CHARCODESMENSAJE");
     
     
     let desXor=[];
-    for(x=0,g=0; x<mensaje.length;x++,g++){
+    for(x=0,g=0; x<charCodesMensaje.length;x++,g++){
       let k;
-      k=mensaje[x]-32;
+      k=charCodesMensaje[x]-32;
       if(k<=32){
-        mensaje[x]=mensaje[x]-33;
-        desXor.push((mensaje[x])^clave[0].charCodeAt(0));
+        charCodesMensaje[x]=charCodesMensaje[x]-33;
+        desXor.push((charCodesMensaje[x])^clave[0].charCodeAt(0));
       }else{
-          desXor.push((mensaje[x])^clave[0].charCodeAt(0));
+          desXor.push((charCodesMensaje[x])^clave[0].charCodeAt(0));
       }
        
        
     }
     
-    
     console.log(desXor,"desXor");
-    
-    /*
-    for(g=0; g<desXor.length;g++){
-        
-        console.log(String.fromCharCode(desXor[g]));
-        
-     }
-     */
     
     //Descifrando
      //recorrido 4 a la izquierda
@@ -213,28 +217,30 @@ function decifrar(){
            i++;
         }
     }
-    
+    console.log(matTrans,"letMatTrans");
+
     let arregloFinal=[];
-    
-    for(row=0; row<defineRows;row++){
-        
+    for(row=0; row<defineR;row++){
         for(column=0;column<3;column++){
         
-          arregloFinal.push(matrizTranspuesta[row][column]);
-          
-           
+          arregloFinal.push(matTrans[row][column]);
         }
     }
     
+    let arregloCharFinal=[];
+    for(x=0; x<arregloFinal.length;x++){
+        arregloCharFinal.push(String.fromCharCode(arregloFinal[x]));
+    }
     
-    console.log(matTrans,"letMatTrans");
+    let mensajeDescifrado=arregloCharFinal.join("");
     
     
-    console.log(arregloFinal,"arregloFinal"); //TODO: PRINT MENSAJE DESENCRIPTADO
-    document.getElementById("respuesta2").innerHTML =arregloFinal ;
+    
+    console.log(arregloCharFinal,"arregloFinal"); //TODO: PRINT MENSAJE DESENCRIPTADO
+    document.getElementById("respuesta2").innerHTML =mensajeDescifrado;
 }
 
-
+  
 
 function convert(num) {
     return num
