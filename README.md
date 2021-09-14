@@ -24,4 +24,3 @@ Tecnicas de difusión: <br/>
 4. Hacer transpuesta de la matriz con el mensaje original 
 
 
-Huevos al pendejo profe
